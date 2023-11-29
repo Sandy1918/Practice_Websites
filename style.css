@@ -1,0 +1,72 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display:grid;
+  height: 100vh;
+  place-items: center;
+  background-image: url('naruto_mrg.jpg');
+  background-size: cover;
+}
+
+.checkbox{
+  height: 160px;
+  width: 320px;
+  background-color: aliceblue;
+  appearance: none;
+  border-radius: 150px;
+  box-shadow : 0 5px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.checkbox::before{
+  height: 160px;
+  width: 160px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  content: "";
+  background-image: url('narutoprofile.jpg');
+  background-size: cover;
+  border-radius:150px;
+  transform: scale(0.9);
+  transition: 0.5s;
+  box-shadow : 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.checkbox:checked{
+  background: #ffff;
+  box-shadow : 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.checkbox:checked::before{
+  left: 160px;
+  box-shadow : 0 5px 10px rgba(0, 0, 0, 0.4);
+  background-image: url('sasukeprofile.jpg');
+  background-size: cover;
+}
+
+.checkbox::after{
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('naruto_mrg.jpg');
+  background-size: cover;
+  top:80px;
+  left:160px;
+  z-index:-1;
+  transform: translate(-50%,-50%);
+  transition: 0.5s;
+}
+
+.checkbox:checked::after{
+  background-image: url('naruto_nyt.jpg');
+  background-size: cover;
+}
